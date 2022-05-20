@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  .class1 {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDwy5bq1fTTQ3VbkEMqGlQo4ffFWQZiUTXaw&usqp=CAU") 
+    
+
+  }
+</style>
+<div class="class1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 card mb-4  mt-5 left  top">
+        <div class="card-body">
+          <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+          <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+          <p class="card-text ">{{ object.content | safe }}</p>
+        </div>
+      </div>
+      {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
